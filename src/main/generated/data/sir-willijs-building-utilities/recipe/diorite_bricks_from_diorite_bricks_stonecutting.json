@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "sir-willijs-building-utilities:diorite_bricks",
+  "result": {
+    "id": "sir-willijs-building-utilities:diorite_bricks"
+  }
+}

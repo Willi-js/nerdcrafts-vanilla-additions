@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "sir-willijs-building-utilities:block/diorite_brick_slab"
+    },
+    "type=double": {
+      "model": "sir-willijs-building-utilities:block/diorite_bricks"
+    },
+    "type=top": {
+      "model": "sir-willijs-building-utilities:block/diorite_brick_slab_top"
+    }
+  }
+}

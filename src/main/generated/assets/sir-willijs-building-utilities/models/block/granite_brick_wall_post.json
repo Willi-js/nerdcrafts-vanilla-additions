@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_wall_post",
+  "textures": {
+    "wall": "sir-willijs-building-utilities:block/granite_bricks"
+  }
+}

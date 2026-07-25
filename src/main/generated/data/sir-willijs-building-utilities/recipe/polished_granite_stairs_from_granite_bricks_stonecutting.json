@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "sir-willijs-building-utilities:granite_bricks",
+  "result": {
+    "id": "minecraft:polished_granite_stairs"
+  }
+}

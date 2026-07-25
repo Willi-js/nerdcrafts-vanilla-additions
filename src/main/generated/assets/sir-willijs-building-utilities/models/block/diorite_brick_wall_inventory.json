@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "sir-willijs-building-utilities:block/diorite_bricks"
+  }
+}

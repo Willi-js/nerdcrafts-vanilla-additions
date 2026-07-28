@@ -72,6 +72,15 @@ public class ModBlocks {
     public static final Block POLISHED_GRANITE_WALL = registerBlock("polished_granite_wall", prop ->
             new WallBlock(prop.strength(1.5F).requiresCorrectToolForDrops()));
 
+    public static final Block SMOOTH_POLISHED_GRANITE = registerBlock("smooth_polished_granite", prop ->
+            new Block(prop.strength(1.5F).requiresCorrectToolForDrops()));
+
+    public static final Block SMOOTH_POLISHED_ANDESITE = registerBlock("smooth_polished_andesite", prop ->
+            new Block(prop.strength(1.5F).requiresCorrectToolForDrops()));
+
+    public static final Block SMOOTH_POLISHED_DIORITE = registerBlock("smooth_polished_diorite", prop ->
+            new Block(prop.strength(1.5F).requiresCorrectToolForDrops()));
+
     public static ResourceKey<Block> getRK(Block block) {
         return BuiltInRegistries.BLOCK.getResourceKey(block).get();
     }
@@ -123,6 +132,10 @@ public class ModBlocks {
             output.accept(GRANITE_BRICK_WALL);
 
             output.accept(POLISHED_GRANITE_WALL);
+
+            output.accept(SMOOTH_POLISHED_GRANITE);
+            output.accept(SMOOTH_POLISHED_ANDESITE);
+            output.accept(SMOOTH_POLISHED_DIORITE);
 
         });
     }

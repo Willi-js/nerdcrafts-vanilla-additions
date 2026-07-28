@@ -3,8 +3,8 @@
     "sir-willijs-building-utilities:andesite_bricks",
     "sir-willijs-building-utilities:diorite_bricks",
     "sir-willijs-building-utilities:granite_bricks",
-    "sir-willijs-building-utilities:andesite_brick_stairs",
-    "sir-willijs-building-utilities:diorite_brick_stairs",
-    "sir-willijs-building-utilities:granite_brick_stairs"
+    "sir-willijs-building-utilities:smooth_polished_andesite",
+    "sir-willijs-building-utilities:smooth_polished_diorite",
+    "sir-willijs-building-utilities:smooth_polished_granite"
   ]
 }

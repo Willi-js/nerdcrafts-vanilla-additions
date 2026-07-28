@@ -41,6 +41,10 @@ public class ModModelProviders extends FabricModelProvider {
         blockModelGenerators.family(Blocks.POLISHED_GRANITE)
                 .wall(ModBlocks.POLISHED_GRANITE_WALL);
 
+        blockModelGenerators.family(ModBlocks.SMOOTH_POLISHED_GRANITE);
+        blockModelGenerators.family(ModBlocks.SMOOTH_POLISHED_ANDESITE);
+        blockModelGenerators.family(ModBlocks.SMOOTH_POLISHED_DIORITE);
+
     }
 
     @Override

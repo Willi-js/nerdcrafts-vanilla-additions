@@ -35,5 +35,9 @@ public class ModBlockLootTableProvider extends FabricBlockLootSubProvider {
         add(ModBlocks.DIORITE_BRICK_SLAB, this::createSlabItemTable);
         add(ModBlocks.GRANITE_BRICK_SLAB, this::createSlabItemTable);
 
+        dropSelf(ModBlocks.SMOOTH_POLISHED_GRANITE);
+        dropSelf(ModBlocks.SMOOTH_POLISHED_ANDESITE);
+        dropSelf(ModBlocks.SMOOTH_POLISHED_DIORITE);
+
     }
 }

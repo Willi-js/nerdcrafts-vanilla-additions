@@ -23,91 +23,71 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         return new RecipeProvider(registries, output) {
             @Override
             public void buildRecipes() {
+                List<ItemLike> andesiteBases = List.of(Blocks.ANDESITE, Blocks.POLISHED_ANDESITE);
+                List<ItemLike> andesiteFamily = List.of(Blocks.ANDESITE, Blocks.POLISHED_ANDESITE, ModBlocks.ANDESITE_BRICKS);
+                List<ItemLike> dioriteBases = List.of(Blocks.DIORITE, Blocks.POLISHED_DIORITE);
+                List<ItemLike> dioriteFamily = List.of(Blocks.DIORITE, Blocks.POLISHED_DIORITE, ModBlocks.DIORITE_BRICKS);
+                List<ItemLike> graniteBases = List.of(Blocks.GRANITE, Blocks.POLISHED_GRANITE);
+                List<ItemLike> graniteFamily = List.of(Blocks.GRANITE, Blocks.POLISHED_GRANITE, ModBlocks.GRANITE_BRICKS);
+                List<ItemLike> polishedAndesiteFamily = List.of(Blocks.POLISHED_ANDESITE, ModBlocks.ANDESITE_BRICKS, Blocks.ANDESITE);
+                List<ItemLike> polishedDioriteFamily = List.of(Blocks.POLISHED_DIORITE, ModBlocks.DIORITE_BRICKS, Blocks.DIORITE);
+                List<ItemLike> polishedGraniteFamily = List.of(Blocks.POLISHED_GRANITE, ModBlocks.GRANITE_BRICKS, Blocks.GRANITE);
+                List<ItemLike> tuffBricks = List.of(Blocks.TUFF_BRICKS);
 
-                //to modded
+                //andesite bricks
+                stonecutterFromBases(ModBlocks.ANDESITE_BRICKS, andesiteBases);
+                stonecutterFromBases(ModBlocks.ANDESITE_BRICK_STAIRS, andesiteFamily);
+                stonecutterFromBases(ModBlocks.ANDESITE_BRICK_SLAB, andesiteFamily, 2);
+                stonecutterFromBases(ModBlocks.ANDESITE_BRICK_WALL, andesiteFamily);
 
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANDESITE_BRICKS, Blocks.ANDESITE);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANDESITE_BRICKS, Blocks.POLISHED_ANDESITE);
+                //diorite bricks
+                stonecutterFromBases(ModBlocks.DIORITE_BRICKS, dioriteBases);
+                stonecutterFromBases(ModBlocks.DIORITE_BRICK_STAIRS, dioriteFamily);
+                stonecutterFromBases(ModBlocks.DIORITE_BRICK_SLAB, dioriteFamily, 2);
+                stonecutterFromBases(ModBlocks.DIORITE_BRICK_WALL, dioriteFamily);
 
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANDESITE_BRICK_STAIRS, Blocks.ANDESITE);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANDESITE_BRICK_STAIRS, Blocks.POLISHED_ANDESITE);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANDESITE_BRICK_STAIRS, ModBlocks.ANDESITE_BRICKS);
+                //granite bricks
+                stonecutterFromBases(ModBlocks.GRANITE_BRICKS, graniteBases);
+                stonecutterFromBases(ModBlocks.GRANITE_BRICK_STAIRS, graniteFamily);
+                stonecutterFromBases(ModBlocks.GRANITE_BRICK_SLAB, graniteFamily, 2);
+                stonecutterFromBases(ModBlocks.GRANITE_BRICK_WALL, graniteFamily);
 
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANDESITE_BRICK_SLAB, Blocks.ANDESITE, 2 );
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANDESITE_BRICK_SLAB, Blocks.POLISHED_ANDESITE, 2);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANDESITE_BRICK_SLAB, ModBlocks.ANDESITE_BRICKS, 2 );
+                //bricks back to polished
+                stonecutterFromBases(Blocks.POLISHED_ANDESITE, List.of(ModBlocks.ANDESITE_BRICKS));
+                stonecutterFromBases(Blocks.POLISHED_DIORITE, List.of(ModBlocks.DIORITE_BRICKS));
+                stonecutterFromBases(Blocks.POLISHED_GRANITE, List.of(ModBlocks.GRANITE_BRICKS));
+                stonecutterFromBases(Blocks.POLISHED_ANDESITE_SLAB, List.of(ModBlocks.ANDESITE_BRICKS), 2);
+                stonecutterFromBases(Blocks.POLISHED_DIORITE_SLAB, List.of(ModBlocks.DIORITE_BRICKS), 2);
+                stonecutterFromBases(Blocks.POLISHED_GRANITE_SLAB, List.of(ModBlocks.GRANITE_BRICKS), 2);
+                stonecutterFromBases(Blocks.POLISHED_ANDESITE_STAIRS, List.of(ModBlocks.ANDESITE_BRICKS));
+                stonecutterFromBases(Blocks.POLISHED_DIORITE_STAIRS, List.of(ModBlocks.DIORITE_BRICKS));
+                stonecutterFromBases(Blocks.POLISHED_GRANITE_STAIRS, List.of(ModBlocks.GRANITE_BRICKS));
 
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANDESITE_BRICK_WALL, Blocks.ANDESITE);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANDESITE_BRICK_WALL, Blocks.POLISHED_ANDESITE);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANDESITE_BRICK_WALL, ModBlocks.ANDESITE_BRICKS);
+                //tuff
+                stonecutterFromBases(Blocks.POLISHED_TUFF, tuffBricks);
+                stonecutterFromBases(Blocks.POLISHED_TUFF_SLAB, tuffBricks, 2);
+                stonecutterFromBases(Blocks.POLISHED_TUFF_STAIRS, tuffBricks);
+                stonecutterFromBases(Blocks.POLISHED_TUFF_WALL, tuffBricks);
 
+                //polished walls
+                stonecutterFromBases(ModBlocks.POLISHED_ANDESITE_WALL, polishedAndesiteFamily);
+                stonecutterFromBases(ModBlocks.POLISHED_DIORITE_WALL, polishedDioriteFamily);
+                stonecutterFromBases(ModBlocks.POLISHED_GRANITE_WALL, polishedGraniteFamily);
 
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DIORITE_BRICKS, Blocks.DIORITE);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DIORITE_BRICKS, Blocks.POLISHED_DIORITE);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DIORITE_BRICKS, ModBlocks.DIORITE_BRICKS);
+                //smooth polished
+                stonecutterFromBases(ModBlocks.SMOOTH_POLISHED_GRANITE, polishedGraniteFamily);
+                stonecutterFromBases(ModBlocks.SMOOTH_POLISHED_DIORITE, polishedDioriteFamily);
+                stonecutterFromBases(ModBlocks.SMOOTH_POLISHED_ANDESITE, polishedAndesiteFamily);
+            }
 
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DIORITE_BRICK_STAIRS, Blocks.DIORITE);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DIORITE_BRICK_STAIRS, Blocks.POLISHED_DIORITE);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DIORITE_BRICK_STAIRS, ModBlocks.DIORITE_BRICKS);
+            private void stonecutterFromBases(ItemLike result, List<? extends ItemLike> bases) {
+                stonecutterFromBases(result, bases, 1);
+            }
 
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DIORITE_BRICK_SLAB, Blocks.DIORITE, 2);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DIORITE_BRICK_SLAB, Blocks.POLISHED_DIORITE, 2);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DIORITE_BRICK_SLAB, ModBlocks.DIORITE_BRICKS, 2);
-
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DIORITE_BRICK_WALL, Blocks.DIORITE);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DIORITE_BRICK_WALL, Blocks.POLISHED_DIORITE);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DIORITE_BRICK_WALL, ModBlocks.DIORITE_BRICKS);
-
-
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GRANITE_BRICKS, Blocks.GRANITE);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GRANITE_BRICKS, Blocks.POLISHED_GRANITE);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GRANITE_BRICKS, ModBlocks.GRANITE_BRICKS);
-
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GRANITE_BRICK_STAIRS, Blocks.GRANITE);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GRANITE_BRICK_STAIRS, Blocks.POLISHED_GRANITE);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GRANITE_BRICK_STAIRS, ModBlocks.GRANITE_BRICKS);
-
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GRANITE_BRICK_SLAB, Blocks.GRANITE, 2);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GRANITE_BRICK_SLAB, Blocks.POLISHED_GRANITE, 2);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GRANITE_BRICK_SLAB, ModBlocks.GRANITE_BRICKS, 2);
-
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GRANITE_BRICK_WALL, Blocks.GRANITE);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GRANITE_BRICK_WALL, Blocks.POLISHED_GRANITE);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GRANITE_BRICK_WALL, ModBlocks.GRANITE_BRICKS);
-
-                //from modded to vanilla
-
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_ANDESITE, ModBlocks.ANDESITE_BRICKS);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_DIORITE, ModBlocks.DIORITE_BRICKS);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_GRANITE, ModBlocks.GRANITE_BRICKS);
-
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_ANDESITE_SLAB, ModBlocks.ANDESITE_BRICKS, 2);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_DIORITE_SLAB, ModBlocks.DIORITE_BRICKS, 2);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_GRANITE_SLAB, ModBlocks.GRANITE_BRICKS, 2);
-
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_ANDESITE_STAIRS, ModBlocks.ANDESITE_BRICKS);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_DIORITE_STAIRS, ModBlocks.DIORITE_BRICKS);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_GRANITE_STAIRS, ModBlocks.GRANITE_BRICKS);
-
-                //vanilla tweaks
-
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_TUFF, Blocks.TUFF_BRICKS);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_TUFF_SLAB, Blocks.TUFF_BRICKS, 2);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_TUFF_STAIRS, Blocks.TUFF_BRICKS);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, Blocks.POLISHED_TUFF_WALL, Blocks.TUFF_BRICKS);
-
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.POLISHED_ANDESITE_WALL, Blocks.POLISHED_ANDESITE);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.POLISHED_ANDESITE_WALL, ModBlocks.ANDESITE_BRICKS);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.POLISHED_ANDESITE_WALL, Blocks.ANDESITE);
-
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.POLISHED_DIORITE_WALL, Blocks.POLISHED_DIORITE);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.POLISHED_DIORITE_WALL, ModBlocks.DIORITE_BRICKS);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.POLISHED_DIORITE_WALL, Blocks.DIORITE);
-
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.POLISHED_GRANITE_WALL, Blocks.POLISHED_GRANITE);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.POLISHED_GRANITE_WALL, ModBlocks.GRANITE_BRICKS);
-                stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, ModBlocks.POLISHED_GRANITE_WALL, Blocks.GRANITE);
-
+            private void stonecutterFromBases(ItemLike result, List<? extends ItemLike> bases, int count) {
+                for (ItemLike base : bases) {
+                    stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, result, base, count);
+                }
             }
         };
     }

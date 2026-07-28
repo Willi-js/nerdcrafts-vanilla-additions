@@ -2,13 +2,12 @@
 	"schemaVersion": 1,
 	"id": "sir-willijs-building-utilities",
 	"version": "${version}",
-	"name": "Sir Willi.js Building Utilities",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "Nerdcraft's Vanilla+ Additions",
+	"description": "Additional vanilla+ blocks and recipes for Nerdcraft SMP!",
 	"authors": [
-		"Me!"
+		"Sir Willi.js"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "CC0-1.0",

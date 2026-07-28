@@ -13,5 +13,8 @@
   "block.sir-willijs-building-utilities.granite_brick_wall": "Granite Brick Wall",
   "block.sir-willijs-building-utilities.polished_andesite_wall": "Polished Andesite Wall",
   "block.sir-willijs-building-utilities.polished_diorite_wall": "Polished Diorite Wall",
-  "block.sir-willijs-building-utilities.polished_granite_wall": "Polished Granite Wall"
+  "block.sir-willijs-building-utilities.polished_granite_wall": "Polished Granite Wall",
+  "block.sir-willijs-building-utilities.smooth_polished_granite": "Smooth Granite",
+  "block.sir-willijs-building-utilities.smooth_polished_diorite": "Smooth Diorite",
+  "block.sir-willijs-building-utilities.smooth_polished_andesite": "Smooth Andesite"
 }

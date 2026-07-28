@@ -2,6 +2,6 @@
   "type": "minecraft:stonecutting",
   "ingredient": "sir-willijs-building-utilities:granite_bricks",
   "result": {
-    "id": "sir-willijs-building-utilities:granite_bricks"
+    "id": "sir-willijs-building-utilities:smooth_polished_granite"
   }
 }

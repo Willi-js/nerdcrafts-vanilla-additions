@@ -1,4 +1,4 @@
-// 26.2	-999999999-01-01T00:00:00	Sir Willi.js building utilities/Block Loot Tables
+// 26.2	-999999999-01-01T00:00:00	Nerdcraft's Vanilla+ Additions/Block Loot Tables
 dc55853782ed9b144b16020a1050bb186bd7517d data/sir-willijs-building-utilities/loot_table/blocks/andesite_brick_slab.json
 af891ad647dd5b16a02897d598fc442d549c9dac data/sir-willijs-building-utilities/loot_table/blocks/andesite_brick_stairs.json
 1e3791f5280833cc19d93d2509677ad7f29b27e4 data/sir-willijs-building-utilities/loot_table/blocks/andesite_brick_wall.json
@@ -14,3 +14,6 @@ f0217c9dfb35bc49cb4bbebb5328e45910d6b29e data/sir-willijs-building-utilities/loo
 2b92917e6df7be0df0660a86f7da0bc08bf02118 data/sir-willijs-building-utilities/loot_table/blocks/polished_andesite_wall.json
 62b9b06829735f40cf17fe348cd63b7aceefeebe data/sir-willijs-building-utilities/loot_table/blocks/polished_diorite_wall.json
 ddac82becf659816163471dfd6d3d0f6a34d892d data/sir-willijs-building-utilities/loot_table/blocks/polished_granite_wall.json
+0a272c526bceb0eb2dd2bd12a972b65ca94bea99 data/sir-willijs-building-utilities/loot_table/blocks/smooth_polished_andesite.json
+bd309c5376e60dd027b261166c16c08c30069d04 data/sir-willijs-building-utilities/loot_table/blocks/smooth_polished_diorite.json
+a70e523a46f4611be5b67b820da69fd904d127aa data/sir-willijs-building-utilities/loot_table/blocks/smooth_polished_granite.json

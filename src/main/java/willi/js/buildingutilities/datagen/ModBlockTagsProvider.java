@@ -21,9 +21,9 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(ModBlocks.getRK(ModBlocks.ANDESITE_BRICKS))
                 .add(ModBlocks.getRK(ModBlocks.DIORITE_BRICKS))
                 .add(ModBlocks.getRK(ModBlocks.GRANITE_BRICKS))
-                .add(ModBlocks.getRK(ModBlocks.ANDESITE_BRICK_STAIRS))
-                .add(ModBlocks.getRK(ModBlocks.DIORITE_BRICK_STAIRS))
-                .add(ModBlocks.getRK(ModBlocks.GRANITE_BRICK_STAIRS));
+                .add(ModBlocks.getRK(ModBlocks.SMOOTH_POLISHED_ANDESITE))
+                .add(ModBlocks.getRK(ModBlocks.SMOOTH_POLISHED_DIORITE))
+                .add(ModBlocks.getRK(ModBlocks.SMOOTH_POLISHED_GRANITE));
 
         tag(BlockTags.STAIRS)
                 .add(ModBlocks.getRK(ModBlocks.ANDESITE_BRICK_STAIRS))

@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "sir-willijs-building-utilities:block/smooth_polished_granite"
-  }
-}

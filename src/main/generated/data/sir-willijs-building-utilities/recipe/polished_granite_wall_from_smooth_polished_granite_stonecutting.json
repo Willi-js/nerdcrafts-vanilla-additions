@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "sir-willijs-building-utilities:smooth_polished_granite",
-  "result": {
-    "id": "sir-willijs-building-utilities:polished_granite_wall"
-  }
-}

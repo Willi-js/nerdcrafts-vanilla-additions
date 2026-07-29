@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "sir-willijs-building-utilities:block/granite_bricks",
-    "side": "sir-willijs-building-utilities:block/granite_bricks",
-    "top": "sir-willijs-building-utilities:block/granite_bricks"
-  }
-}

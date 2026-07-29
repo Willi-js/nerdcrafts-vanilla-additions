@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "sir-willijs-building-utilities:granite_bricks",
-  "result": {
-    "id": "sir-willijs-building-utilities:granite_brick_wall"
-  }
-}

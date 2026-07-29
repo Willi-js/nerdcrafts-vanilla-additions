@@ -1,7 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": "sir-willijs-building-utilities:smooth_polished_tuff",
-  "result": {
-    "id": "minecraft:polished_tuff"
-  }
-}

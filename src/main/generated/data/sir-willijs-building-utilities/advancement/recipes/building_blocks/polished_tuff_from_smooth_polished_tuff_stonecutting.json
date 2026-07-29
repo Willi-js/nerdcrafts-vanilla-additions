@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_smooth_polished_tuff": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sir-willijs-building-utilities:smooth_polished_tuff"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "sir-willijs-building-utilities:polished_tuff_from_smooth_polished_tuff_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_smooth_polished_tuff"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "sir-willijs-building-utilities:polished_tuff_from_smooth_polished_tuff_stonecutting"
+    ]
+  }
+}

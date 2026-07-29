@@ -45,6 +45,10 @@ public class ModModelProviders extends FabricModelProvider {
         blockModelGenerators.family(ModBlocks.SMOOTH_POLISHED_ANDESITE);
         blockModelGenerators.family(ModBlocks.SMOOTH_POLISHED_DIORITE);
 
+        blockModelGenerators.family(ModBlocks.SMOOTH_POLISHED_TUFF);
+        blockModelGenerators.family(ModBlocks.SMOOTH_POLISHED_BLACKSTONE);
+        blockModelGenerators.family(ModBlocks.SMOOTH_POLISHED_DEEPSLATE);
+
     }
 
     @Override

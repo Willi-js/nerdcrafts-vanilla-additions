@@ -38,6 +38,9 @@ public class ModBlockLootTableProvider extends FabricBlockLootSubProvider {
         dropSelf(ModBlocks.SMOOTH_POLISHED_GRANITE);
         dropSelf(ModBlocks.SMOOTH_POLISHED_ANDESITE);
         dropSelf(ModBlocks.SMOOTH_POLISHED_DIORITE);
+        dropSelf(ModBlocks.SMOOTH_POLISHED_TUFF);
+        dropSelf(ModBlocks.SMOOTH_POLISHED_BLACKSTONE);
+        dropSelf(ModBlocks.SMOOTH_POLISHED_DEEPSLATE);
 
     }
 }

@@ -81,6 +81,15 @@ public class ModBlocks {
     public static final Block SMOOTH_POLISHED_DIORITE = registerBlock("smooth_polished_diorite", prop ->
             new Block(prop.strength(1.5F).requiresCorrectToolForDrops()));
 
+    public static final Block SMOOTH_POLISHED_TUFF = registerBlock("smooth_polished_tuff", prop ->
+            new Block(prop.strength(1.5F).requiresCorrectToolForDrops()));
+
+    public static final Block SMOOTH_POLISHED_BLACKSTONE = registerBlock("smooth_polished_blackstone", prop ->
+            new Block(prop.strength(1.5F).requiresCorrectToolForDrops()));
+
+    public static final Block SMOOTH_POLISHED_DEEPSLATE = registerBlock("smooth_polished_deepslate", prop ->
+            new Block(prop.strength(1.5F).requiresCorrectToolForDrops()));
+
     public static ResourceKey<Block> getRK(Block block) {
         return BuiltInRegistries.BLOCK.getResourceKey(block).get();
     }
@@ -136,6 +145,10 @@ public class ModBlocks {
             output.accept(SMOOTH_POLISHED_GRANITE);
             output.accept(SMOOTH_POLISHED_ANDESITE);
             output.accept(SMOOTH_POLISHED_DIORITE);
+
+            output.accept(SMOOTH_POLISHED_TUFF);
+            output.accept(SMOOTH_POLISHED_BLACKSTONE);
+            output.accept(SMOOTH_POLISHED_DEEPSLATE);
 
         });
     }

@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "sir-willijs-building-utilities:smooth_polished_andesite",
+  "result": {
+    "id": "sir-willijs-building-utilities:andesite_bricks"
+  }
+}

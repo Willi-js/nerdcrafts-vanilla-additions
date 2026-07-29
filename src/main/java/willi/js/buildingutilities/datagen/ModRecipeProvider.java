@@ -6,6 +6,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import willi.js.buildingutilities.blocks.ModBlocks;
@@ -23,31 +24,27 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         return new RecipeProvider(registries, output) {
             @Override
             public void buildRecipes() {
-                List<ItemLike> andesiteBases = List.of(Blocks.ANDESITE, Blocks.POLISHED_ANDESITE);
-                List<ItemLike> andesiteFamily = List.of(Blocks.ANDESITE, Blocks.POLISHED_ANDESITE, ModBlocks.ANDESITE_BRICKS);
-                List<ItemLike> dioriteBases = List.of(Blocks.DIORITE, Blocks.POLISHED_DIORITE);
-                List<ItemLike> dioriteFamily = List.of(Blocks.DIORITE, Blocks.POLISHED_DIORITE, ModBlocks.DIORITE_BRICKS);
-                List<ItemLike> graniteBases = List.of(Blocks.GRANITE, Blocks.POLISHED_GRANITE);
-                List<ItemLike> graniteFamily = List.of(Blocks.GRANITE, Blocks.POLISHED_GRANITE, ModBlocks.GRANITE_BRICKS);
-                List<ItemLike> polishedAndesiteFamily = List.of(Blocks.POLISHED_ANDESITE, ModBlocks.ANDESITE_BRICKS, Blocks.ANDESITE);
-                List<ItemLike> polishedDioriteFamily = List.of(Blocks.POLISHED_DIORITE, ModBlocks.DIORITE_BRICKS, Blocks.DIORITE);
-                List<ItemLike> polishedGraniteFamily = List.of(Blocks.POLISHED_GRANITE, ModBlocks.GRANITE_BRICKS, Blocks.GRANITE);
-                List<ItemLike> tuffBricks = List.of(Blocks.TUFF_BRICKS);
+                List<ItemLike> andesiteFamily = List.of(Blocks.ANDESITE, Blocks.POLISHED_ANDESITE, ModBlocks.ANDESITE_BRICKS, ModBlocks.SMOOTH_POLISHED_ANDESITE);
+                List<ItemLike> dioriteFamily = List.of(Blocks.DIORITE, Blocks.POLISHED_DIORITE, ModBlocks.DIORITE_BRICKS, ModBlocks.SMOOTH_POLISHED_DIORITE);
+                List<ItemLike> graniteFamily = List.of(Blocks.GRANITE, Blocks.POLISHED_GRANITE, ModBlocks.GRANITE_BRICKS, ModBlocks.SMOOTH_POLISHED_GRANITE);
+                List<ItemLike> tuffFamily = List.of(Blocks.TUFF, Blocks.POLISHED_TUFF, Blocks.TUFF_BRICKS, Blocks.CHISELED_TUFF, Blocks.CHISELED_TUFF_BRICKS, ModBlocks.SMOOTH_POLISHED_TUFF);
+                List<ItemLike> blackStoneFamily = List.of(Blocks.BLACKSTONE, Blocks.POLISHED_BLACKSTONE, Blocks.POLISHED_BLACKSTONE_BRICKS, ModBlocks.SMOOTH_POLISHED_BLACKSTONE);
+                List<ItemLike> deepslateFamily = List.of(Blocks.DEEPSLATE, Blocks.POLISHED_DEEPSLATE, Blocks.DEEPSLATE_BRICKS, ModBlocks.SMOOTH_POLISHED_DEEPSLATE, Blocks.COBBLED_DEEPSLATE);
 
                 //andesite bricks
-                stonecutterFromBases(ModBlocks.ANDESITE_BRICKS, andesiteBases);
+                stonecutterFromBases(ModBlocks.ANDESITE_BRICKS, removeFromFamily(andesiteFamily, ModBlocks.ANDESITE_BRICKS));
                 stonecutterFromBases(ModBlocks.ANDESITE_BRICK_STAIRS, andesiteFamily);
                 stonecutterFromBases(ModBlocks.ANDESITE_BRICK_SLAB, andesiteFamily, 2);
                 stonecutterFromBases(ModBlocks.ANDESITE_BRICK_WALL, andesiteFamily);
 
                 //diorite bricks
-                stonecutterFromBases(ModBlocks.DIORITE_BRICKS, dioriteBases);
+                stonecutterFromBases(ModBlocks.DIORITE_BRICKS, removeFromFamily(dioriteFamily, ModBlocks.DIORITE_BRICKS));
                 stonecutterFromBases(ModBlocks.DIORITE_BRICK_STAIRS, dioriteFamily);
                 stonecutterFromBases(ModBlocks.DIORITE_BRICK_SLAB, dioriteFamily, 2);
                 stonecutterFromBases(ModBlocks.DIORITE_BRICK_WALL, dioriteFamily);
 
                 //granite bricks
-                stonecutterFromBases(ModBlocks.GRANITE_BRICKS, graniteBases);
+                stonecutterFromBases(ModBlocks.GRANITE_BRICKS, removeFromFamily(graniteFamily, ModBlocks.GRANITE_BRICKS));
                 stonecutterFromBases(ModBlocks.GRANITE_BRICK_STAIRS, graniteFamily);
                 stonecutterFromBases(ModBlocks.GRANITE_BRICK_SLAB, graniteFamily, 2);
                 stonecutterFromBases(ModBlocks.GRANITE_BRICK_WALL, graniteFamily);
@@ -64,20 +61,37 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 stonecutterFromBases(Blocks.POLISHED_GRANITE_STAIRS, List.of(ModBlocks.GRANITE_BRICKS));
 
                 //tuff
-                stonecutterFromBases(Blocks.POLISHED_TUFF, tuffBricks);
-                stonecutterFromBases(Blocks.POLISHED_TUFF_SLAB, tuffBricks, 2);
-                stonecutterFromBases(Blocks.POLISHED_TUFF_STAIRS, tuffBricks);
-                stonecutterFromBases(Blocks.POLISHED_TUFF_WALL, tuffBricks);
+                stonecutterFromBases(Blocks.POLISHED_TUFF, List.of(Blocks.TUFF_BRICKS, ModBlocks.SMOOTH_POLISHED_TUFF));
+                stonecutterFromBases(Blocks.POLISHED_TUFF_SLAB, List.of(Blocks.TUFF_BRICKS, ModBlocks.SMOOTH_POLISHED_TUFF), 2);
+                stonecutterFromBases(Blocks.POLISHED_TUFF_STAIRS, List.of(Blocks.TUFF_BRICKS, ModBlocks.SMOOTH_POLISHED_TUFF));
+                stonecutterFromBases(Blocks.POLISHED_TUFF_WALL, List.of(Blocks.TUFF_BRICKS, ModBlocks.SMOOTH_POLISHED_TUFF));
+
+                //deepslate
+
+                stonecutterFromBases(Blocks.POLISHED_DEEPSLATE, List.of(ModBlocks.SMOOTH_POLISHED_DEEPSLATE));
+                stonecutterFromBases(Blocks.POLISHED_DEEPSLATE_SLAB, List.of(ModBlocks.SMOOTH_POLISHED_DEEPSLATE));
+                stonecutterFromBases(Blocks.POLISHED_DEEPSLATE_STAIRS, List.of(ModBlocks.SMOOTH_POLISHED_DEEPSLATE));
+                stonecutterFromBases(Blocks.POLISHED_DEEPSLATE_WALL, List.of(ModBlocks.SMOOTH_POLISHED_DEEPSLATE));
+
+                //blackstone
+
+                stonecutterFromBases(Blocks.POLISHED_BLACKSTONE, List.of(ModBlocks.SMOOTH_POLISHED_BLACKSTONE));
+                stonecutterFromBases(Blocks.POLISHED_BLACKSTONE_SLAB, List.of(ModBlocks.SMOOTH_POLISHED_BLACKSTONE));
+                stonecutterFromBases(Blocks.POLISHED_BLACKSTONE_STAIRS, List.of(ModBlocks.SMOOTH_POLISHED_BLACKSTONE));
+                stonecutterFromBases(Blocks.POLISHED_BLACKSTONE_WALL, List.of(ModBlocks.SMOOTH_POLISHED_BLACKSTONE));
 
                 //polished walls
-                stonecutterFromBases(ModBlocks.POLISHED_ANDESITE_WALL, polishedAndesiteFamily);
-                stonecutterFromBases(ModBlocks.POLISHED_DIORITE_WALL, polishedDioriteFamily);
-                stonecutterFromBases(ModBlocks.POLISHED_GRANITE_WALL, polishedGraniteFamily);
+                stonecutterFromBases(ModBlocks.POLISHED_ANDESITE_WALL, andesiteFamily);
+                stonecutterFromBases(ModBlocks.POLISHED_DIORITE_WALL, dioriteFamily);
+                stonecutterFromBases(ModBlocks.POLISHED_GRANITE_WALL, graniteFamily);
 
                 //smooth polished
-                stonecutterFromBases(ModBlocks.SMOOTH_POLISHED_GRANITE, polishedGraniteFamily);
-                stonecutterFromBases(ModBlocks.SMOOTH_POLISHED_DIORITE, polishedDioriteFamily);
-                stonecutterFromBases(ModBlocks.SMOOTH_POLISHED_ANDESITE, polishedAndesiteFamily);
+                stonecutterFromBases(ModBlocks.SMOOTH_POLISHED_ANDESITE, removeFromFamily(andesiteFamily, ModBlocks.SMOOTH_POLISHED_ANDESITE));
+                stonecutterFromBases(ModBlocks.SMOOTH_POLISHED_DIORITE, removeFromFamily(dioriteFamily, ModBlocks.SMOOTH_POLISHED_DIORITE));
+                stonecutterFromBases(ModBlocks.SMOOTH_POLISHED_GRANITE, removeFromFamily(graniteFamily, ModBlocks.SMOOTH_POLISHED_GRANITE));
+                stonecutterFromBases(ModBlocks.SMOOTH_POLISHED_TUFF, removeFromFamily(tuffFamily, ModBlocks.SMOOTH_POLISHED_TUFF));
+                stonecutterFromBases(ModBlocks.SMOOTH_POLISHED_BLACKSTONE, removeFromFamily(blackStoneFamily, ModBlocks.SMOOTH_POLISHED_BLACKSTONE));
+                stonecutterFromBases(ModBlocks.SMOOTH_POLISHED_DEEPSLATE, removeFromFamily(deepslateFamily, ModBlocks.SMOOTH_POLISHED_DEEPSLATE));
             }
 
             private void stonecutterFromBases(ItemLike result, List<? extends ItemLike> bases) {
@@ -88,6 +102,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 for (ItemLike base : bases) {
                     stonecutterResultFromBase(RecipeCategory.BUILDING_BLOCKS, result, base, count);
                 }
+            }
+
+            private List<? extends ItemLike> removeFromFamily(List<? extends ItemLike> family, ItemLike item) {
+                return family.stream().filter(base -> !base.equals(item)).toList();
             }
         };
     }

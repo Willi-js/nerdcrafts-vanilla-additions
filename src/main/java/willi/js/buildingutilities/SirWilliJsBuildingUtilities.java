@@ -15,12 +15,11 @@ public class SirWilliJsBuildingUtilities implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Loaded Nerdcraft's Vanilla+ Additions");
 		ModBlocks.registerBlocks();
 	}
 
 	public static Identifier id(String path) {
 		return Identifier.fromNamespaceAndPath(MOD_ID, path);
 	}
-	public static Identifier minecraft_id(String path) { return Identifier.fromNamespaceAndPath("minecraft", path); }
 }

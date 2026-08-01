@@ -100,22 +100,10 @@ public class ModBlocks {
         return Registry.register(BuiltInRegistries.BLOCK, SirWilliJsBuildingUtilities.id(name), toRegister);
     }
 
-    private static Block registerMinecraftBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
-        Block toRegister = function.apply(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, SirWilliJsBuildingUtilities.minecraft_id(name))));
-        registerMinecraftBlockItem(name, toRegister);
-        return Registry.register(BuiltInRegistries.BLOCK, SirWilliJsBuildingUtilities.minecraft_id(name), toRegister);
-    }
-
     private static void registerBlockItem(String name, Block block) {
         Registry.register(BuiltInRegistries.ITEM, SirWilliJsBuildingUtilities.id(name),
                 new BlockItem(block, new Item.Properties().useBlockDescriptionPrefix()
                         .setId(ResourceKey.create(Registries.ITEM, SirWilliJsBuildingUtilities.id(name)))));
-    }
-
-    private static void registerMinecraftBlockItem(String name, Block block) {
-        Registry.register(BuiltInRegistries.ITEM, SirWilliJsBuildingUtilities.minecraft_id(name),
-                new BlockItem(block, new Item.Properties().useBlockDescriptionPrefix()
-                        .setId(ResourceKey.create(Registries.ITEM, SirWilliJsBuildingUtilities.minecraft_id(name)))));
     }
 
     public static void registerBlocks() {

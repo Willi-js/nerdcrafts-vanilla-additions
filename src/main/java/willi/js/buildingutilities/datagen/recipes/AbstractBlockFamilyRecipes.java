@@ -1,4 +1,4 @@
-package willi.js.buildingutilities.datagen;
+package willi.js.buildingutilities.datagen.recipes;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.recipes.RecipeCategory;

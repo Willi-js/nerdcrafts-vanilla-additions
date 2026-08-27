@@ -2,6 +2,7 @@ package willi.js.buildingutilities.datagen.recipes;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.recipes.RecipeOutput;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import willi.js.buildingutilities.blocks.ModBlocks;
@@ -33,5 +34,8 @@ public class DioriteFamilyRecipes extends AbstractBlockFamilyRecipes {
 
         //smooth polished
         stonecutterFromBases(ModBlocks.SMOOTH_POLISHED_DIORITE, removeFromFamily(dioriteFamily, ModBlocks.SMOOTH_POLISHED_DIORITE));
+
+        //turn into calcite
+        smeltingResultFromBase(Items.CALCITE, Items.DIORITE);
     }
 }

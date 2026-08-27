@@ -26,6 +26,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 new TuffFamilyRecipes(registries, output).buildRecipes();
                 new BlackstoneFamilyRecipes(registries, output).buildRecipes();
                 new DeepslateFamilyRecipes(registries, output).buildRecipes();
+                new CoralCraftingRecipes(registries, output).buildRecipes();
+                new AmethystRecipes(registries, output).buildRecipes();
+                new BeeNestRecipe(registries, output).buildRecipes();
             }
         };
     }

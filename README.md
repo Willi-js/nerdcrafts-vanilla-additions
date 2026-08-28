@@ -2,6 +2,8 @@
 
 a vanilla-style building and quality-of-life mod for the Nerdcraft SMP, built for Minecraft 1.26 (Fabric).
 
+<img src="src/main/resources/assets/sir-willijs-building-utilities/icon-export.png">
+
 ## Description
 
 Nerdcraft's Vanilla+ Additions fills the gaps vanilla leaves behind for builders. It adds brick variants for granite, diorite and andesite (stairs, slabs and walls included), introduces a new smooth polished blocks and missing vanilla building blocks like polished stone walls.

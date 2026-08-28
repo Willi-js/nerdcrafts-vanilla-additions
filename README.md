@@ -1,6 +1,6 @@
 # Nerdcraft's Vanilla+ Additions
 
-A vanilla-style building and quality-of-life mod for the Nerdcraft SMP, built for Minecraft 1.26 (Fabric).
+A vanilla-style building and quality-of-life mod for the Nerdcraft SMP, built for Minecraft 26.2 (Fabric).
 
 <img src="src/main/resources/assets/sir-willijs-building-utilities/icon-export.png">
 

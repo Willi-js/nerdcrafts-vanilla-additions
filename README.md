@@ -52,6 +52,6 @@ Everything is implemented to feel like genuine vanilla content — same block pr
 
 ## Requirements
 
-- Minecraft 1.26
+- Minecraft 26.2
 - Fabric Loader 0.19.3+
 - Fabric API

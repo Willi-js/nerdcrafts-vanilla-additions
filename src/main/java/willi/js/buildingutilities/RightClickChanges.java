@@ -15,6 +15,7 @@ import net.minecraft.world.level.block.WeatheringCopper;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.Property;
 
+import java.util.Objects;
 import java.util.Optional;
 
 public class RightClickChanges {
@@ -29,7 +30,7 @@ public class RightClickChanges {
             Block block = blockState.getBlock();
             ItemStack heldItem = player.getItemInHand(hand);
 
-            if(!heldItem.is(Items.POTION) || !heldItem.get(DataComponents.POTION_CONTENTS).is(Potions.WATER)) return InteractionResult.PASS;
+            if(!heldItem.is(Items.POTION) || !Objects.requireNonNull(heldItem.get(DataComponents.POTION_CONTENTS)).is(Potions.WATER)) return InteractionResult.PASS;
             if(!Blocks.COPPER_BLOCK.asList().contains(block)
                     && !Blocks.COPPER_BARS.asList().contains(block)
                     && !Blocks.COPPER_BULB.asList().contains(block)

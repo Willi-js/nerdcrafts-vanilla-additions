@@ -55,7 +55,3 @@ Everything is implemented to feel like genuine vanilla content — same block pr
 - Minecraft 1.26
 - Fabric Loader 0.19.3+
 - Fabric API
-
-## License
-
-CC0-1.0

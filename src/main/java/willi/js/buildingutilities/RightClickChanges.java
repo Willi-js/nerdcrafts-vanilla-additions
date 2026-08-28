@@ -5,12 +5,16 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.WeatheringCopper;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.Property;
@@ -67,9 +71,10 @@ public class RightClickChanges {
                         0.5, 0.5, 0.5,
                         0.0
                 );
+                serverLevel.playSound(null, pos, SoundEvents.COPPER_GOLEM_BECOME_STATUE, SoundSource.BLOCKS);
             }
 
-            if(player.isCreative()) return  InteractionResult.SUCCESS;
+            if(player.isCreative()) return InteractionResult.SUCCESS;
 
             player.getInventory().removeItem(player.getInventory().getSelectedSlot(), 1);
             player.getInventory().add(Items.GLASS_BOTTLE.getDefaultInstance());

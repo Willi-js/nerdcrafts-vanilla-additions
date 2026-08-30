@@ -5,7 +5,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
@@ -14,20 +13,20 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.WeatheringCopper;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.Property;
 
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 
 public class RightClickChanges {
+
     public static void weatherCopper() {
         UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
-            if(player.isSpectator()) {
-                return InteractionResult.PASS;
-            }
+
+            if(player.isSpectator()) return InteractionResult.PASS;
 
             BlockPos pos = hitResult.getBlockPos();
             BlockState blockState = world.getBlockState(pos);
@@ -80,6 +79,117 @@ public class RightClickChanges {
             player.getInventory().add(Items.GLASS_BOTTLE.getDefaultInstance());
 
             return  InteractionResult.SUCCESS;
+        });
+    }
+
+    public static void mossStoneTypes() {
+        UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
+
+            if(player.isSpectator()) return InteractionResult.PASS;
+            if(player.isShiftKeyDown()) return  InteractionResult.PASS;
+
+            BlockPos pos = hitResult.getBlockPos();
+            BlockState blockState = world.getBlockState(pos);
+            Block block = blockState.getBlock();
+            ItemStack heldItem = player.getItemInHand(hand);
+
+            if(!heldItem.is(Items.MOSS_BLOCK)) return InteractionResult.PASS;
+
+            Map<Block, Block> blockMap = Map.of(
+                Blocks.COBBLESTONE, Blocks.MOSSY_COBBLESTONE,
+                Blocks.COBBLESTONE_SLAB, Blocks.MOSSY_COBBLESTONE_SLAB,
+                Blocks.COBBLESTONE_STAIRS, Blocks.MOSSY_COBBLESTONE_STAIRS,
+                Blocks.COBBLESTONE_WALL, Blocks.MOSSY_COBBLESTONE_WALL,
+                Blocks.STONE_BRICKS, Blocks.MOSSY_STONE_BRICKS,
+                Blocks.STONE_BRICK_SLAB, Blocks.MOSSY_STONE_BRICK_SLAB,
+                Blocks.STONE_BRICK_STAIRS, Blocks.MOSSY_STONE_BRICK_STAIRS,
+                Blocks.STONE_BRICK_WALL, Blocks.MOSSY_STONE_BRICK_WALL
+            );
+
+            if(!blockMap.containsKey(block)) return InteractionResult.PASS;
+
+            Block newBlock = blockMap.get(block);
+            BlockState newBlockState = newBlock.defaultBlockState();
+
+            for (Property<?> property : blockState.getProperties()) {
+                if (newBlockState.hasProperty(property)) {
+                    newBlockState = copyProperty(newBlockState, blockState, property);
+                }
+            }
+            world.setBlock(pos, newBlockState, 3);
+
+            if (world instanceof ServerLevel serverLevel) {
+                serverLevel.sendParticles(
+                        ParticleTypes.COMPOSTER,
+                        pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5,
+                        30,
+                        0.5, 0.5, 0.5,
+                        0.0
+                );
+                serverLevel.playSound(null, pos, SoundEvents.MOSS_PLACE, SoundSource.BLOCKS);
+            }
+
+            if(player.isCreative()) return InteractionResult.SUCCESS;
+
+            player.getInventory().removeItem(player.getInventory().getSelectedSlot(), 1);
+
+            return InteractionResult.SUCCESS;
+        });
+    }
+
+    public static void shearMossyStoneTypes() {
+        UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
+
+            if(player.isSpectator()) return InteractionResult.PASS;
+
+            BlockPos pos = hitResult.getBlockPos();
+            BlockState blockState = world.getBlockState(pos);
+            Block block = blockState.getBlock();
+            ItemStack heldItem = player.getItemInHand(hand);
+
+            if(!heldItem.is(Items.SHEARS)) return InteractionResult.PASS;
+
+            Map<Block, Block> blockMap = Map.of(
+                    Blocks.MOSSY_COBBLESTONE, Blocks.COBBLESTONE,
+                    Blocks.MOSSY_COBBLESTONE_SLAB, Blocks.COBBLESTONE_SLAB,
+                    Blocks.MOSSY_COBBLESTONE_STAIRS, Blocks.COBBLESTONE_STAIRS,
+                    Blocks.MOSSY_COBBLESTONE_WALL, Blocks.COBBLESTONE_WALL,
+                    Blocks.MOSSY_STONE_BRICKS, Blocks.STONE_BRICKS,
+                    Blocks.MOSSY_STONE_BRICK_SLAB, Blocks.STONE_BRICK_SLAB,
+                    Blocks.MOSSY_STONE_BRICK_STAIRS, Blocks.STONE_BRICK_STAIRS,
+                    Blocks.MOSSY_STONE_BRICK_WALL, Blocks.STONE_BRICK_WALL
+                    );
+
+            if(!blockMap.containsKey(block)) return InteractionResult.PASS;
+
+            Block newBlock = blockMap.get(block);
+            BlockState newBlockState = newBlock.defaultBlockState();
+
+            for (Property<?> property : blockState.getProperties()) {
+                if (newBlockState.hasProperty(property)) {
+                    newBlockState = copyProperty(newBlockState, blockState, property);
+                }
+            }
+            world.setBlock(pos, newBlockState, 3);
+
+            if (world instanceof ServerLevel serverLevel) {
+                serverLevel.sendParticles(
+                        ParticleTypes.MYCELIUM,
+                        pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5,
+                        30,
+                        0.5, 0.5, 0.5,
+                        0
+                );
+                serverLevel.playSound(null, pos, SoundEvents.SHEARS_SNIP, SoundSource.BLOCKS);
+            }
+
+            Block.popResource(world, pos, new ItemStack(Items.MOSS_BLOCK, 1));
+
+            if(player.isCreative()) return InteractionResult.SUCCESS;
+
+            player.getInventory().getSelectedItem().hurtAndBreak(1, player, hand);
+
+            return InteractionResult.SUCCESS;
         });
     }
 

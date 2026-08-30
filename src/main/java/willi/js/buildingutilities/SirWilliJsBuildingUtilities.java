@@ -2,14 +2,7 @@ package willi.js.buildingutilities;
 
 import net.fabricmc.api.ModInitializer;
 
-import net.fabricmc.fabric.api.event.player.UseBlockCallback;
-import net.minecraft.core.BlockPos;
 import net.minecraft.resources.Identifier;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.Blocks;
-import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import willi.js.buildingutilities.blocks.ModBlocks;
@@ -25,6 +18,8 @@ public class SirWilliJsBuildingUtilities implements ModInitializer {
 		ModBlocks.registerBlocks();
 		DataComponentEdits.modifyPotionMaxStackSize();
 		RightClickChanges.weatherCopper();
+		RightClickChanges.mossStoneTypes();
+		RightClickChanges.shearMossyStoneTypes();
 	}
 
 	public static Identifier id(String path) {

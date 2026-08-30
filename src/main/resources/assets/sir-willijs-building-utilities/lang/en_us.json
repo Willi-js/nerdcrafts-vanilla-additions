@@ -19,5 +19,8 @@
   "block.sir-willijs-building-utilities.smooth_polished_andesite": "Smooth Andesite",
   "block.sir-willijs-building-utilities.smooth_polished_tuff": "Smooth Tuff",
   "block.sir-willijs-building-utilities.smooth_polished_blackstone": "Smooth Blackstone",
-  "block.sir-willijs-building-utilities.smooth_polished_deepslate": "Smooth Deepslate"
+  "block.sir-willijs-building-utilities.smooth_polished_deepslate": "Smooth Deepslate",
+  "block.sir-willijs-building-utilities.calcite_slab": "Calcite Slab",
+  "block.sir-willijs-building-utilities.calcite_stairs": "Calcite Stairs",
+  "block.sir-willijs-building-utilities.calcite_wall": "Calcite Wall"
 }

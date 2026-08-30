@@ -49,6 +49,11 @@ public class ModModelProviders extends FabricModelProvider {
         blockModelGenerators.family(ModBlocks.SMOOTH_POLISHED_BLACKSTONE);
         blockModelGenerators.family(ModBlocks.SMOOTH_POLISHED_DEEPSLATE);
 
+        blockModelGenerators.family(Blocks.CALCITE)
+                .slab(ModBlocks.CALCITE_SLAB)
+                .wall(ModBlocks.CALCITE_WALL)
+                .stairs(ModBlocks.CALCITE_STAIRS);
+
     }
 
     @Override

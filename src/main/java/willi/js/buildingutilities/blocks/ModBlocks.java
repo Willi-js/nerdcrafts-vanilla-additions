@@ -90,6 +90,17 @@ public class ModBlocks {
     public static final Block SMOOTH_POLISHED_DEEPSLATE = registerBlock("smooth_polished_deepslate", prop ->
             new Block(prop.strength(1.5F).requiresCorrectToolForDrops()));
 
+
+    // calcite
+    public static final Block CALCITE_STAIRS = registerBlock("calcite_stairs", prop ->
+            new StairBlock(Blocks.CALCITE.defaultBlockState() ,prop.strength(1.5F).requiresCorrectToolForDrops()));
+
+    public static final Block CALCITE_SLAB = registerBlock("calcite_slab", prop ->
+            new SlabBlock(prop.strength(1.5F).requiresCorrectToolForDrops()));
+
+    public static final Block CALCITE_WALL = registerBlock("calcite_wall", prop ->
+            new WallBlock(prop.strength(1.5F).requiresCorrectToolForDrops()));
+
     public static ResourceKey<Block> getRK(Block block) {
         return BuiltInRegistries.BLOCK.getResourceKey(block).get();
     }
@@ -137,6 +148,10 @@ public class ModBlocks {
             output.accept(SMOOTH_POLISHED_TUFF);
             output.accept(SMOOTH_POLISHED_BLACKSTONE);
             output.accept(SMOOTH_POLISHED_DEEPSLATE);
+
+            output.accept(CALCITE_STAIRS);
+            output.accept(CALCITE_SLAB);
+            output.accept(CALCITE_WALL);
 
         });
     }

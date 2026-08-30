@@ -29,12 +29,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 new CoralCraftingRecipes(registries, output).buildRecipes();
                 new AmethystRecipes(registries, output).buildRecipes();
                 new BeeNestRecipe(registries, output).buildRecipes();
+                new CalciteFamilyRecipes(registries, output).buildRecipes();
             }
         };
     }
 
     @Override
     public String getName() {
-        return "Willi.js Building Utilities";
+        return "Nerdcraft's Vanilla+ Additions";
     }
 }

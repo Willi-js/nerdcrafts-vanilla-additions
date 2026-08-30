@@ -42,5 +42,9 @@ public class ModBlockLootTableProvider extends FabricBlockLootSubProvider {
         dropSelf(ModBlocks.SMOOTH_POLISHED_BLACKSTONE);
         dropSelf(ModBlocks.SMOOTH_POLISHED_DEEPSLATE);
 
+        dropSelf(ModBlocks.CALCITE_STAIRS);
+        dropSelf(ModBlocks.CALCITE_WALL);
+
+        add(ModBlocks.CALCITE_SLAB, this::createSlabItemTable);
     }
 }

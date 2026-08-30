@@ -32,7 +32,9 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(ModBlocks.getRK(ModBlocks.GRANITE_BRICK_STAIRS))
                 .add(ModBlocks.getRK(ModBlocks.ANDESITE_BRICK_SLAB))
                 .add(ModBlocks.getRK(ModBlocks.DIORITE_BRICK_SLAB))
-                .add(ModBlocks.getRK(ModBlocks.GRANITE_BRICK_SLAB));
+                .add(ModBlocks.getRK(ModBlocks.GRANITE_BRICK_SLAB))
+                .add(ModBlocks.getRK(ModBlocks.CALCITE_STAIRS))
+                .add(ModBlocks.getRK(ModBlocks.CALCITE_SLAB));
 
 
 
@@ -40,12 +42,14 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
         tag(BlockTags.STAIRS)
                 .add(ModBlocks.getRK(ModBlocks.ANDESITE_BRICK_STAIRS))
                 .add(ModBlocks.getRK(ModBlocks.DIORITE_BRICK_STAIRS))
-                .add(ModBlocks.getRK(ModBlocks.GRANITE_BRICK_STAIRS));
+                .add(ModBlocks.getRK(ModBlocks.GRANITE_BRICK_STAIRS))
+                .add(ModBlocks.getRK(ModBlocks.CALCITE_STAIRS));
 
         tag(BlockTags.SLABS)
                 .add(ModBlocks.getRK(ModBlocks.ANDESITE_BRICK_SLAB))
                 .add(ModBlocks.getRK(ModBlocks.DIORITE_BRICK_SLAB))
-                .add(ModBlocks.getRK(ModBlocks.GRANITE_BRICK_SLAB));
+                .add(ModBlocks.getRK(ModBlocks.GRANITE_BRICK_SLAB))
+                .add(ModBlocks.getRK(ModBlocks.CALCITE_SLAB));
 
         tag(BlockTags.WALLS)
                 .add(ModBlocks.getRK(ModBlocks.ANDESITE_BRICK_WALL))
@@ -53,6 +57,7 @@ public class ModBlockTagsProvider extends FabricTagsProvider.BlockTagsProvider {
                 .add(ModBlocks.getRK(ModBlocks.GRANITE_BRICK_WALL))
                 .add(ModBlocks.getRK(ModBlocks.POLISHED_ANDESITE_WALL))
                 .add(ModBlocks.getRK(ModBlocks.POLISHED_DIORITE_WALL))
-                .add(ModBlocks.getRK(ModBlocks.POLISHED_GRANITE_WALL));
+                .add(ModBlocks.getRK(ModBlocks.POLISHED_GRANITE_WALL))
+                .add(ModBlocks.getRK(ModBlocks.CALCITE_WALL));
     }
 }
